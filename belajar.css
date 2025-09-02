@@ -39,6 +39,155 @@ body {
 .kotak {
     background-color: rgba(255, 255, 255, 0.276);
     backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 20px rgb(0, 91, 103);
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    /* transition: background-color 0.9s all ease-in-out; */
+    width: 250px;
+    font-size: 18px;
+    text-shadow: #000000 0px 1px 2px;
+    transition: 0.6s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    line-height: 50px;
+
+}
+
+.kotak:hover {
+    background-color: rgb(0, 91, 103);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+
+.container {
+    background-color: rgba(208, 255, 250, 0.181);
+    backdrop-filter: blur(7px);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0px 10px black;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    justify-items: space-between
+    
+
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header img{
+    margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+.header h3 {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.header p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px white;
+    font-size: 11px;
+    
+}
+.logo {
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+
+ /* Efek klik (tap) */
+ .logo a:hover img {
+  animation: transform  0.8s ease;
+  transition: transform scale 1.3 ease;
+  cursor: pointer;
+ } 
+
+
+@keyframes loncat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.3); }
+}
+
+/* container setiap logo */
+.logo a {
+  position: relative;
+  display: inline-block;
+}
+
+/* gambar logo */
+.logo a img {
+  width: 30px;
+  animation: loncat 2s infinite ease-in-out;
+  transition: transform 1.3s ease;
+  transition: 1.3s ease;/* biar hover/klik halus */
+}
+
+/* bayangan di bawah */
+.logo a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 8px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  filter: blur(3px);
+  transition: all 1.3s ease;
+}
+
+
+/* pas hover bayangan ikut melebar */
+.logo a:hover::after {
+  background: rgba(0,0,0,0.6);
+  transform: translateX(-50%) scaleX(1.2);
+}
+
+/* pas diklik (active): logo kayak mendem */
+.logo a:active img {
+  transform: scale(0.85) translateY(5px);
+  transition: transform 1.1s ease;
+}
+
+.logo a:active::after {
+  transform: translateX(-50%) scaleX(0.8);
+  background: rgba(0,0,0,0.8);
+}
+
+.kotak {
+    background-color: rgba(255, 255, 255, 0.276);
+    backdrop-filter: blur(5px);
     box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
     border: 2px solid #ccc;
     border-radius: 15px;
@@ -183,3 +332,4 @@ body {
   transform: translateX(-50%) scaleX(0.8);
   background: rgba(0,0,0,0.8);
 }
+
